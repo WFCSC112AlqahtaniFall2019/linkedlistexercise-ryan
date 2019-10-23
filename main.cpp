@@ -11,6 +11,7 @@ int main() {
     Node* temp;
     Node* head= new Node();
     Node* current= head;
+    Node* previousNode;
     int min ;
     cout<<"enter a list of integers and -1 to stop"<<endl;
     cin>>x;
@@ -31,7 +32,6 @@ int main() {
         current=current->getNext();
     }
 
-
     current = head->getNext();
     min=current->getValue();
     //1) find the node that has the minimum value
@@ -44,7 +44,27 @@ int main() {
     cout<< "Minimum is: " << min << endl;
 
     //2) remove the 4th node from the list
-    current = head->getNext();
+
+        current = head->getNext();
+        previousNode = head;
+        cout << "hello";
+        for (int i = 0; i < 3; i++) {
+        current=current->getNext();
+        previousNode = previousNode->getNext();
+        }
+            previousNode->setNext(current->getNext()); //set the previous value to the address of the current value
+            current->setNext(nullptr); //null so that element 4 doesn't point to anything
+        cout <<"hey";
+        delete current; //delete element 4
+        cout <<"hi";
+        current=head->getNext(); //reassign the current
+        while(current!=nullptr) //iterate through to reprint
+        {
+        current->printNode();
+        current=current->getNext();
+        }
+
+   /* current = current->getNext();
     while(count <4){
         current = current->getNext();
         count++;
@@ -67,7 +87,7 @@ int main() {
     {
         current->printNode();
         current=current->getNext();
-    }
+    }*/
 
     //3) remove the last node
 
