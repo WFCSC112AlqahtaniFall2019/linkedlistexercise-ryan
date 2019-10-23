@@ -63,7 +63,7 @@ int main() {
         current->printNode();
         current=current->getNext();
         }
-
+    cout << "Deleted 4th element" << endl;
    /* current = current->getNext();
     while(count <4){
         current = current->getNext();
@@ -90,6 +90,25 @@ int main() {
     }*/
 
     //3) remove the last node
+    current = head->getNext();
+    previousNode = head;
+    cout << "hello";
+   while (current != nullptr){
+        current=current->getNext();
+        previousNode = previousNode->getNext();
+    }
+    previousNode->setNext(nullptr); //set the previous value to the address of the current value
+    //current->setNext(nullptr); //null so that element 4 doesn't point to anything
+    cout <<"hey";
+    delete current; //delete last element
+    cout <<"hi";
+    current=head->getNext(); //reassign the current
+    while(current!=nullptr) //iterate through to reprint
+    {
+        current->printNode();
+        current=current->getNext();
+    }
+    cout << "Deleted last element" << endl;
 
     //4) remove the first node
 
