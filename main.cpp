@@ -47,16 +47,16 @@ int main() {
 
         current = head->getNext();
         previousNode = head;
-        cout << "hello";
+       // cout << "hello";
         for (int i = 0; i < 3; i++) {
         current=current->getNext();
         previousNode = previousNode->getNext();
         }
             previousNode->setNext(current->getNext()); //set the previous value to the address of the current value
             current->setNext(nullptr); //null so that element 4 doesn't point to anything
-        cout <<"hey";
+       // cout <<"hey";
         delete current; //delete element 4
-        cout <<"hi";
+        //cout <<"hi";
         current=head->getNext(); //reassign the current
         while(current!=nullptr) //iterate through to reprint
         {
@@ -92,16 +92,16 @@ int main() {
     //3) remove the last node
     current = head->getNext();
     previousNode = head;
-    cout << "hello";
-   while (current != nullptr){
+   // cout << "hello";
+   while (current->getNext() != nullptr){
         current=current->getNext();
         previousNode = previousNode->getNext();
     }
     previousNode->setNext(nullptr); //set the previous value to the address of the current value
     //current->setNext(nullptr); //null so that element 4 doesn't point to anything
-    cout <<"hey";
+   cout <<"hey";
     delete current; //delete last element
-    cout <<"hi";
+    cout <<"hi" << endl;
     current=head->getNext(); //reassign the current
     while(current!=nullptr) //iterate through to reprint
     {
