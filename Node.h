@@ -8,6 +8,7 @@
 class Node{
 public:
     Node (int v = 0);
+   // ~Node();
     int getValue () const;
     Node* getNext ()const;
     void setValue(int v);

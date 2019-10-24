@@ -8,6 +8,10 @@ Node::Node (int v ){
     next= nullptr;
 }
 
+/*Node::~Node() {
+    delete next;
+}*/
+
 int Node::getValue () const{
     return value;
 }
